@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.7
 MAINTAINER Brian Gilbert <brian@realityloop.com>
 
 # Based on hoadx/docker-cloud9 by Hoa Duong <duongxuanhoa@gmail.com>
