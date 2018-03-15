@@ -5,7 +5,6 @@ Run apk add --update --no-cache php7 php7-xdebug php7-json php7-dom php7-curl ph
   && rm -rf /var/cache/apk/* \
   && ln -s /usr/bin/php7 /usr/bin/php
 
-# Install compsoer.
+# Install composer.
 Run curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
   chmod +x /usr/local/bin/composer
-
