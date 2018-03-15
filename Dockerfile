@@ -1,6 +1,8 @@
 FROM alpine:3.5
 MAINTAINER Brian Gilbert <brian@realityloop.com>
 
+# Based on hoadx/docker-cloud9 by Hoa Duong <duongxuanhoa@gmail.com>
+
 RUN apk add --update --no-cache g++ make python tmux curl nodejs bash openssh-client git py-pip python-dev \
  && rm -rf /var/cache/apk/*
 
