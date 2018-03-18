@@ -1,15 +1,14 @@
-FROM alpine:3.7
+FROM alpine:3.6
 MAINTAINER Brian Gilbert <brian@realityloop.com>
 
 # Based on hoadx/docker-cloud9 by Hoa Duong <duongxuanhoa@gmail.com>
 
-RUN apk add --update --no-cache g++ make python tmux curl nodejs bash openssh-client git py-pip python-dev \
+RUN apk add --update --no-cache g++ make python tmux curl nodejs nodejs-npm bash openssh-client git py-pip python-dev \
  && rm -rf /var/cache/apk/*
 
 # Install php.
 Run apk add --update --no-cache php7 php7-xdebug php7-json php7-dom php7-curl php7-openssl php7-phar php7-mbstring php7-zlib \
-  && rm -rf /var/cache/apk/* \
-  && ln -s /usr/bin/php7 /usr/bin/php
+  && rm -rf /var/cache/apk/*
 
 # Install composer.
 Run curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
