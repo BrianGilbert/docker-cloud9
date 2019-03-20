@@ -10,6 +10,10 @@ RUN apk add --update --no-cache g++ make python tmux curl nodejs nodejs-npm bash
 Run apk add --update --no-cache php7.2 php7.2-xdebug php7.2-json php7.2-dom php7.2-curl php7.2-openssl php7.2-phar php7.2-mbstring php7.2-zlib \
   && rm -rf /var/cache/apk/*
 
+# Enable xdebug
+RUN printf "; Xdebug extension installed by Cloud9\nzend_extension=xdebug.so\nxdebug.remote_enable=1" | sudo tee --append /etc/php/7.2/mods-available/xdebug.ini
+RUN sudo phpenmod xdebug
+
 # Install composer.
 Run curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
   chmod +x /usr/local/bin/composer
